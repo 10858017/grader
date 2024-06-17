@@ -27,12 +27,16 @@ add_executable(
   ./src/test.cpp
   ./src/grader.cpp
   ./include/grader.h
+  ./src/student.cpp
+  ./src/standard.cpp
 )
 
 add_executable(
   runGrader
   ./src/grader.cpp
   ./src/main.cpp
+  ./src/student.cpp
+  ./src/standard.cpp
 )
 
 set(TEST_FILE_1 "ADRIANO T ALFORQUE NSCAS Growth Winter 2023 Grade 8.pdf")
