@@ -8,12 +8,9 @@ class StudentTestsADRIANO : public ::testing::Test{
         }
 };
 TEST_F(StudentTestsADRIANO, ScoreTest){
-
-    std::cout << my_student.getName() << std::endl;
     EXPECT_EQ(my_student.getScore("5.N.3.g"), 0.0);
 }
 
-/*
 TEST_F(StudentTestsADRIANO, Score5N3G){
     EXPECT_EQ(my_student.getScore("5.N.3.g"), 0.0);
 }
@@ -41,4 +38,3 @@ TEST_F(StudentTestsADRIANO, ScoreOverall){
 TEST_F(StudentTestsADRIANO, ScorePartiallyCorrect){
     EXPECT_NEAR(my_student.getScore("8.A.1.b"), 0.5, 0.001);
 }
-*/
