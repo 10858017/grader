@@ -5,9 +5,7 @@ project(my_project)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/poppler")
-
-# Poppler
+#Poppler
 find_package(Poppler REQUIRED)
 include_directories(${Poppler_INCLUDE_DIRS})
 
