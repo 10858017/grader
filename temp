@@ -1,0 +1,35 @@
+# Provide paths for Poppler installation
+# Set variables needed by FindPoppler.cmake
+
+# Set paths for Poppler libraries and headers
+set(Poppler_INCLUDE_DIRS "/usr/local/include/poppler")
+set(Poppler_LIBRARIES "/usr/local/lib/libpoppler.dylib" "/usr/local/lib/libpoppler-cpp.dylib")
+
+# Set up imported target
+add_library(Poppler::Poppler UNKNOWN IMPORTED)
+set_target_properties(Poppler::Poppler PROPERTIES
+  INTERFACE_INCLUDE_DIRECTORIES "${Poppler_INCLUDE_DIRS}"
+  IMPORTED_LINK_INTERFACE_LIBRARIES "${Poppler_LIBRARIES}"
+)
+
+# Propagate variables to the parent directory
+set(Poppler_FOUND TRUE)
+set(Poppler_INCLUDE_DIRS ${Poppler_INCLUDE_DIRS} CACHE PATH "Path to Poppler include directories")
+set(Poppler_LIBRARIES ${Poppler_LIBRARIES} CACHE FILEPATH "Path to Poppler libraries")
+
+# Provide package information to CMake
+include(CMakeFindDependencyMacro)
+find_dependency(ZLIB)
+find_dependency(PNG)
+find_dependency(Fontconfig)
+find_dependency(Cairo)
+
+# Provide handle to the Poppler package
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(Poppler
+  REQUIRED_VARS Poppler_INCLUDE_DIRS Poppler_LIBRARIES
+  VERSION_VAR Poppler_VERSION
+)
+
+# Report findings
+mark_as_advanced(Poppler_INCLUDE_DIRS Poppler_LIBRARIES)
