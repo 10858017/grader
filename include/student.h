@@ -5,8 +5,8 @@
 */
 #include <string>
 #include "./standard.h"
-#include <poppler/cpp/poppler-document.h>
-#include <poppler/cpp/poppler-page.h>
+#include <poppler-document.h>
+#include <poppler-page.h>
 #include <map>
 
 class Student{

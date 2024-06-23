@@ -13,5 +13,14 @@ class Standard{
 };
 
 bool operator==(const Standard& lhs, const Standard& rhs);
+bool operator>(const Standard& lhs, const Standard& rhs);
+bool operator<(const Standard& lhs, const Standard& rhs);
+
 bool operator==(const Standard& lhs, const std::string& rhs);
+bool operator>(const Standard& lhs, const std::string& rhs);
+bool operator<(const Standard& lhs, const std::string& rhs);
+
+
 bool operator==(const std::string& lhs, const Standard& rhs);
+bool operator>(const std::string& lhs, const Standard& rhs);
+bool operator<(const std::string& lhs, const Standard& rhs);
